@@ -1,0 +1,525 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "CrudCrud.com - Example API Documentation",
+		"description": "API Berita CRUDCRUD adalah sebuah layanan RESTful yang memungkinkan pengguna untuk mengakses, membuat, memperbarui, dan menghapus entri berita. Dengan API ini, pengembang dapat dengan mudah mengintegrasikan layanan berita ke dalam aplikasi mereka, baik itu situs web, aplikasi seluler, atau platform lainnya. API ini menyediakan akses ke operasi dasar \"Create,\" \"Read,\" \"Update,\" dan \"Delete,\" sehingga pengguna dapat mengelola dan menampilkan berita dengan mudah.",
+		"version": "1.0.0",
+		"license": { "name": "Apache 2.0", "url": "http://www.apache.org/licenses/LICENSE-2.0.html" }
+	},
+	"host": "crudcrud.com",
+	"basePath": "/api/f12c540a0f1c4166a6c6ecc54f49bf9c",
+	"tags": [
+		{
+			"name": "User",
+			"description": "Semua API Operasi Pengguna"
+		},
+		{
+			"name": "Category",
+			"description": "Semua API Operasi Kategori"
+		},
+		{
+			"name": "News",
+			"description": "Semua API Operasi Berita"
+		}
+	],
+	"schemes": ["https"],
+	"paths": {
+		"/users": {
+			"get": {
+				"tags": ["User"],
+				"summary": "Daftar Pengguna",
+				"description": "Daftar pengguna yang terdaftar",
+				"operationId": "getUsers",
+				"produces": ["application/json"],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/User"
+							}
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					}
+				}
+			},
+			"post": {
+				"tags": ["User"],
+				"summary": "Tambah Pengguna",
+				"description": "Tambah pengguna baru",
+				"operationId": "addUser",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "User",
+						"in": "body",
+						"description": "Pengguna yang akan ditambahkan",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"500": {
+						"description": "_id pengguna harus unik"
+					}
+				}
+			}
+		},
+		"/users/{_id}": {
+			"get": {
+				"tags": ["User"],
+				"summary": "Detail Pengguna",
+				"description": "Detail pengguna berdasarkan id",
+				"operationId": "getUser",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Pengguna tidak ditemukan"
+					}
+				}
+			},
+			"put": {
+				"tags": ["User"],
+				"summary": "Perbarui Pengguna",
+				"description": "Perbarui pengguna berdasarkan id",
+				"operationId": "updateUser",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					},
+					{
+						"name": "User",
+						"in": "body",
+						"description": "Pengguna yang akan diperbarui",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Pengguna Berhasil diubah"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Pengguna tidak ditemukan"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["User"],
+				"summary": "Hapus Pengguna",
+				"description": "Hapus pengguna berdasarkan id",
+				"operationId": "deleteUser",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Pengguna Berhasil dihapus"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Pengguna tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/categories": {
+			"get": {
+				"tags": ["Category"],
+				"summary": "Daftar Kategori",
+				"description": "Daftar kategori yang terdaftar",
+				"operationId": "getCategories",
+				"produces": ["application/json"],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Category"
+							}
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					}
+				}
+			},
+			"post": {
+				"tags": ["Category"],
+				"summary": "Tambah Kategori",
+				"description": "Tambah kategori baru",
+				"operationId": "addCategory",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "Category",
+						"in": "body",
+						"description": "Kategori yang akan ditambahkan",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"500": {
+						"description": "_id kategori harus unik"
+					}
+				}
+			}
+		},
+		"/categories/{_id}": {
+			"get": {
+				"tags": ["Category"],
+				"summary": "Detail Kategori",
+				"description": "Detail kategori berdasarkan id",
+				"operationId": "getCategory",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Kategori tidak ditemukan"
+					}
+				}
+			},
+			"put": {
+				"tags": ["Category"],
+				"summary": "Perbarui Kategori",
+				"description": "Perbarui kategori berdasarkan id",
+				"operationId": "updateCategory",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					},
+					{
+						"name": "Category",
+						"in": "body",
+						"description": "Kategori yang akan diperbarui",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Kategori Berhasil diubah"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Kategori tidak ditemukan"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["Category"],
+				"summary": "Hapus Kategori",
+				"description": "Hapus kategori berdasarkan id",
+				"operationId": "deleteCategory",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Kategori Berhasil dihapus"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Kategori tidak ditemukan"
+					}
+				}
+			}
+		},
+		"/news": {
+			"get": {
+				"tags": ["News"],
+				"summary": "Daftar Berita",
+				"description": "Daftar berita yang terdaftar",
+				"operationId": "getNews",
+				"produces": ["application/json"],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/News"
+							}
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					}
+				}
+			},
+			"post": {
+				"tags": ["News"],
+				"summary": "Tambah Berita",
+				"description": "Tambah berita baru",
+				"operationId": "addNews",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "News",
+						"in": "body",
+						"description": "Berita yang akan ditambahkan",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/News"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/News"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"500": {
+						"description": "_id berita harus unik"
+					}
+				}
+			}
+		},
+		"/news/{_id}": {
+			"get": {
+				"tags": ["News"],
+				"summary": "Detail Berita",
+				"description": "Detail berita berdasarkan id",
+				"operationId": "getNews",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/News"
+						}
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Berita tidak ditemukan"
+					}
+				}
+			},
+			"put": {
+				"tags": ["News"],
+				"summary": "Perbarui Berita",
+				"description": "Perbarui berita berdasarkan id",
+				"operationId": "updateNews",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					},
+					{
+						"name": "News",
+						"in": "body",
+						"description": "Berita yang akan diperbarui",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/News"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Berita Berhasil diubah"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Berita tidak ditemukan"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["News"],
+				"summary": "Hapus Berita",
+				"description": "Hapus berita berdasarkan id",
+				"operationId": "deleteNews",
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"$ref": "#/parameters/IDParam"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Berita Berhasil dihapus"
+					},
+					"400": {
+						"description": "Kesalahan permintaan"
+					},
+					"404": {
+						"description": "Berita tidak ditemukan"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"User": {
+			"type": "object",
+			"properties": {
+				"first_name": {
+					"type": "string",
+					"example": "Zainul"
+				},
+				"last_name": {
+					"type": "string",
+					"example": "Muhaimin"
+				},
+				"role": {
+					"type": "string",
+					"enum": ["user", "admin"],
+					"example": "user"
+				}
+			},
+			"required": ["first_name", "last_name", "role"]
+		},
+		"Category": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"example": "Technology"
+				}
+			},
+			"required": ["name"]
+		},
+		"News": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string",
+					"example": "Lorem Ipsum"
+				},
+				"content": {
+					"type": "string",
+					"example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc eu nisl"
+				},
+				"thumb": {
+					"type": "string",
+					"format": "uri",
+					"example": "https://picsum.photos/200/300"
+				},
+				"publisher": {
+					"type": "object",
+					"properties": {
+						"first_name": {
+							"type": "string",
+							"example": "Zainul"
+						},
+						"last_name": {
+							"type": "string",
+							"example": "Muhaimin"
+						}
+					},
+					"required": ["first_name", "last_name"]
+				},
+				"category": {
+					"type": "array",
+					"items": {
+						"description": "categories",
+						"type": "string"
+					},
+					"example": ["Science", "Technology"],
+					"uniqueItems": true
+				}
+			},
+			"required": ["title", "content", "thumb", "publisher"]
+		}
+	},
+	"parameters": {
+		"IDParam": {
+			"name": "_id",
+			"in": "path",
+			"description": "ID Data",
+			"required": true,
+			"type": "string",
+			"example": "5f7b1f6a9d7c5a0017a5e3a0"
+		}
+	}
+}
