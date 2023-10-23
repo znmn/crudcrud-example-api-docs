@@ -7,7 +7,7 @@
 		"license": { "name": "Apache 2.0", "url": "http://www.apache.org/licenses/LICENSE-2.0.html" }
 	},
 	"host": "crudcrud.com",
-	"basePath": "/api/f12c540a0f1c4166a6c6ecc54f49bf9c",
+	"basePath": "/api/9e055a45f5fa47b499163af928da4987",
 	"tags": [
 		{
 			"name": "User",
