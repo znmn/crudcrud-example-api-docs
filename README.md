@@ -45,5 +45,5 @@ Ini adalah dokumentasi untuk API Berita CRUDCRUD. API ini memungkinkan Anda untu
 ### Mendapatkan Daftar Artikel Berita
 
 ```http
-GET https://crudcrud.com/api/9e055a45f5fa47b499163af928da4987/news
+GET https://crudcrud.com/api/{apiKey}/news
 ```
