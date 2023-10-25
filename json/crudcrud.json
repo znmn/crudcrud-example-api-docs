@@ -7,7 +7,7 @@
 		"license": { "name": "Apache 2.0", "url": "http://www.apache.org/licenses/LICENSE-2.0.html" }
 	},
 	"host": "crudcrud.com",
-	"basePath": "/api/9e055a45f5fa47b499163af928da4987",
+	"basePath": "/api/e767a86181bf4d1f838ad66f98ce7aed",
 	"tags": [
 		{
 			"name": "User",
@@ -64,8 +64,8 @@
 					}
 				],
 				"responses": {
-					"200": {
-						"description": "OK",
+					"201": {
+						"description": "Data berhasil ditambahkan",
 						"schema": {
 							"$ref": "#/definitions/User"
 						}
@@ -202,8 +202,8 @@
 					}
 				],
 				"responses": {
-					"200": {
-						"description": "OK",
+					"201": {
+						"description": "Data berhasil ditambahkan",
 						"schema": {
 							"$ref": "#/definitions/Category"
 						}
@@ -340,8 +340,8 @@
 					}
 				],
 				"responses": {
-					"200": {
-						"description": "OK",
+					"201": {
+						"description": "Data berhasil ditambahkan",
 						"schema": {
 							"$ref": "#/definitions/News"
 						}
