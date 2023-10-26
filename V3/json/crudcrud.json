@@ -426,7 +426,7 @@
 				"tags": ["News"],
 				"summary": "Detail Berita",
 				"description": "Detail berita berdasarkan id",
-				"operationId": "getNews",
+				"operationId": "getNewsDetail",
 				"parameters": [
 					{
 						"$ref": "#/components/parameters/IDParam"
