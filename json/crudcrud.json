@@ -360,7 +360,7 @@
 				"tags": ["News"],
 				"summary": "Detail Berita",
 				"description": "Detail berita berdasarkan id",
-				"operationId": "getNews",
+				"operationId": "getNewsDetail",
 				"produces": ["application/json"],
 				"parameters": [
 					{
@@ -519,7 +519,7 @@
 			"description": "ID Data",
 			"required": true,
 			"type": "string",
-			"example": "5f7b1f6a9d7c5a0017a5e3a0"
+			"default": "5f7b1f6a9d7c5a0017a5e3a0"
 		}
 	}
 }
