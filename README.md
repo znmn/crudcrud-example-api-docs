@@ -12,8 +12,8 @@ Ini adalah dokumentasi untuk API Berita CRUDCRUD. API ini memungkinkan Anda untu
 
 ## Live Documentation
 
-[Live Documentation - Swagger 2](https://znmn.github.io/crucrud-example-api-docs) dapat diakses melalui link berikut: https://znmn.github.io/crucrud-example-api-docs
-[Live Documentation - OAS 3](https://znmn.github.io/crucrud-example-api-docs/V3) dapat diakses melalui link berikut: https://znmn.github.io/crucrud-example-api-docs/V3
+[Live Documentation - Swagger 2](https://znmn.github.io/crudcrud-example-api-docs) dapat diakses melalui link berikut: https://znmn.github.io/crudcrud-example-api-docs
+[Live Documentation - OAS 3](https://znmn.github.io/crudcrud-example-api-docs/V3) dapat diakses melalui link berikut: https://znmn.github.io/crudcrud-example-api-docs/V3
 
 ## Fitur
 
